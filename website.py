@@ -1,11 +1,9 @@
 from flask import Flask, render_template, request, redirect
 from datetime import datetime
 import inflect
-import os
 
 app = Flask(__name__)
 p = inflect.engine()
-os.makedirs(r"C:\Bills", exist_ok=True)
 metadata = []
 data = []
 Bill_Date=datetime.now().strftime("%Y-%m-%d")

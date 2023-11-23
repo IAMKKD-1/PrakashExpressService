@@ -52,7 +52,12 @@ def index():
 def print_pdf():
     if not metadata or not data:
         return render_template('template.html')
-    total_amount = sum([int(i[4]) for i in data])
+    total_amount = 0.0
+    for row in data:
+        try:
+            total_amount += float(row[4])
+        except ValueError:
+            pass
     template = render_template('template.html', Company_Name=metadata[0][0], Bill_Date=metadata[0][1], Bill_Month=metadata[0][2], data=data, total_amount_words=p.number_to_words(total_amount).title(), total_amount=total_amount)
     data.clear()
     metadata.clear()

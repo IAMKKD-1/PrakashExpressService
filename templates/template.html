@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRAKASH EXPRESS SERVICE</title>
+    <style>
+        body {
+            font-family: Arial, "Segoe UI";
+        }
+        hr {
+            border: 1px solid black;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+        button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+  </head>
+  <body>
+    <button onclick="window.location.href='/'"></button>
+    <p style="text-align: center">&nbsp;</p>
+    <h1 style="text-align: center; font-family: 'Arial Black', 'Segoe UI Black'; font-size: 35px; font-weight: 900;"><strong>PRAKASH EXPRESS SERVICE</strong></h1>
+    <p>&nbsp;</p>
+    <p>
+      <strong>Office:</strong> Shop No.10, Super Market, Ayodhyapuri, Near Fulan
+      Devi Tiraha Modh Road, Bhadohi - 221401 (UP) India
+    </p>
+    <p><strong>Mob No:</strong>&nbsp;9455679218, 9889992986</p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:fullandevitiraha.eup@fr.dtdc.com" target="_blank"
+        >fullandevitiraha.eup@fr.dtdc.com</a
+      >
+    </p>
+    <hr />
+    <p>Date: {{Bill_Date}}</p>
+    <table style="width: 100%; border-collapse: collapse; border-spacing: 8px; border: 2px solid black;" border="2">
+      <tbody>
+        <tr>
+          <th style="width: 100%" colspan="5">
+            <p>{{Company_Name}}</p>
+            <p>Courier Charges for the month: {{Bill_Month}}</p>
+          </th>
+        </tr>
+        <tr>
+          <td style="width: 21%; text-align: center; padding: 8px; border: 2px solid black;">
+            <strong>AIRWAY BILL</strong>
+          </td>
+          <td style="width: 18%; text-align: center; padding: 8px; border: 2px solid black;"><strong>DATE</strong></td>
+          <td style="width: 15%; text-align: center; padding: 8px; border: 2px solid black;">
+            <strong>WEIGHT</strong>
+          </td>
+          <td style="width: 28%; text-align: center; padding: 8px; border: 2px solid black;">
+            <strong>DESTINATION CITY</strong>
+          </td>
+          <td style="width: 18%; text-align: center; padding: 8px; border: 2px solid black;">
+            <strong>AMOUNT</strong>
+          </td>
+        </tr>
+        {% for item in data %}
+        <tr>
+          <td style="width: 21%; text-align: center; padding: 8px; border: 2px solid black;">{{item[0]}}</td>
+          <td style="width: 18%; text-align: center; padding: 8px; border: 2px solid black;">{{item[1]}}</td>
+          <td style="width: 15%; text-align: center; padding: 8px; border: 2px solid black;">{{item[2]}}</td>
+          <td style="width: 28%; text-align: center; padding: 8px; border: 2px solid black;">{{item[3]}}</td>
+          <td style="width: 18%; text-align: center; padding: 8px; border: 2px solid black;">{{item[4]}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <th style="width: 82%; text-align: center; padding: 8px; border: 2px solid black;" colspan="4">Total</th>
+          <td style="width: 18%; text-align: center; padding: 8px; border: 2px solid black;"><strong>{{total_amount}}</strong></td>
+        </tr>
+      </tbody>
+    </table>    
+    <hr />
+    <p style="text-align: center">
+      <strong>Total : Rs. {{total_amount_words}}</strong>
+    </p>
+    <hr />
+    <p>&nbsp;</p>
+    <p>For Prakash Express Service</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>Authorize Sign</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <hr />
+    <p>
+      <strong>Office</strong>: Shop No.10, Super Market, Ayodhyapuri, Near Fulan
+      Devi Tiraha Modh Road, Bhadohi - 221401 (UP) India.</br>
+      <strong>Mob No</strong>: 9455679218,
+      9889992986.&nbsp;<strong>Email</strong>:<a
+        href="mailto:fullandevitiraha.eup@fr.dtdc.com"
+        target="_blank"
+        rel="noopener"
+      >
+        fullandevitiraha.eup@fr.dtdc.com</a
+      >
+    </p>
+  </body>
+</html>

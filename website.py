@@ -58,7 +58,7 @@ def print_pdf():
             total_amount += float(row[4])
         except ValueError:
             pass
-    template = render_template('template.html', Company_Name=metadata[0][0], Bill_Date=metadata[0][1], Bill_Month=metadata[0][2], data=data, total_amount_words=p.number_to_words(total_amount).title(), total_amount=total_amount)
+    template = render_template('template.html', Company_Name=metadata[0][0], Bill_Date=metadata[0][1], Bill_Month=metadata[0][2], data=data, total_amount_words=p.number_to_words(total_amount).split(' point')[0].title(), total_amount=total_amount)
     data.clear()
     metadata.clear()
     return template
